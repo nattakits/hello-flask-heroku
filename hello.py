@@ -18,22 +18,52 @@ class get_mathcal(Resource):
     def get(self):
         parser=reqparse.RequestParser()
         parser.add_argument('input1',type=str)
-        parser.add_argument('input2',type=str)
-        parser.add_argument('operation',type=str)
+        #parser.add_argument('input2',type=str)
+        #parser.add_argument('operation',type=str)
         dictp=parser.parse_args()
         inp1=dictp['input1']
-        inp2=dictp['input2']
-        oper=dictp['operation']
-        if(oper=='plus'):
-            oper='+'
-        else:
-            oper='-'
-        stringcal=inp1+' '+oper+' '+inp2
+        #inp2=dictp['input2']
+        #oper=dictp['operation']
+        #if(oper=='plus'):
+            #oper='+'
+        #else:
+            #oper='-'
+
+        print(inp1)
+        if(int(inp1)<=150000):  #<150000
+            inp1='0'
+        elif(int(inp1)<=300000): #150000-300000
+            inp1=(int(inp1)-150000)*0.05
+            inp1=str(inp1)
+        elif(int(inp1)<=500000):
+            inp1=7500+(int(inp1)-300000)*0.10
+            inp1=str(inp1)
+        elif(int(inp1)<=750000):
+            inp1=7500+20000+(int(inp1)-500000)*0.15
+            inp1=str(inp1)
+        elif(int(inp1)<=1000000):
+            inp1=7500+20000+37500+(int(inp1)-750000)*0.20
+            inp1=str(inp1)
+        elif(int(inp1)<=2000000):
+            inp1=7500+20000+37500+50000+(int(inp1)-1000000)*0.25
+            inp1=str(inp1)
+        elif(int(inp1)<=5000000):
+            inp1=7500+20000+37500+50000+250000+(int(inp1)-2000000)*0.30
+            inp1=str(inp1)
+        elif(int(inp1)>5000000):
+            inp1=7500+20000+37500+50000+250000+900000+(int(inp1)-5000000)*0.30
+            inp1=str(inp1)
+
+        
+
+        stringcal=inp1
+        
+        
         print(stringcal)
-        answ = eval(stringcal)
+        #answ = eval(stringcal)
         result={}
         result['stringcal']=stringcal
-        result['answer']=answ
+        #result['answer']=answ
         return(result)
 api.add_resource(get_mathcal, '/cal',endpoint='cal')
 
