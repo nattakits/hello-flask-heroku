@@ -1,5 +1,4 @@
 from flask import Flask
-import json
 from flask_jsonpify import jsonpify
 from flask_restful import Resource,Api,reqparse
 import requests
