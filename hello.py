@@ -31,28 +31,28 @@ class get_mathcal(Resource):
 
         print(inp1)
         if(int(inp1)<=150000):  #<150000
-            inp1='0'
+            inp1='0'+' '+'บาท'
         elif(int(inp1)<=300000): #150000-300000
             inp1=(int(inp1)-150000)*0.05
-            inp1=str(inp1)
+            inp1=str(round(inp1,2))+' '+'บาท'
         elif(int(inp1)<=500000):
             inp1=7500+(int(inp1)-300000)*0.10
-            inp1=str(inp1)
+            inp1=str(round(inp1,2))+' '+'บาท'
         elif(int(inp1)<=750000):
             inp1=7500+20000+(int(inp1)-500000)*0.15
-            inp1=str(inp1)
+            inp1=str(round(inp1,2))+' '+'บาท'
         elif(int(inp1)<=1000000):
             inp1=7500+20000+37500+(int(inp1)-750000)*0.20
-            inp1=str(inp1)
+            inp1=str(round(inp1,2))+' '+'บาท'
         elif(int(inp1)<=2000000):
             inp1=7500+20000+37500+50000+(int(inp1)-1000000)*0.25
-            inp1=str(inp1)
+            inp1=str(round(inp1,2))+' '+'บาท'
         elif(int(inp1)<=5000000):
             inp1=7500+20000+37500+50000+250000+(int(inp1)-2000000)*0.30
-            inp1=str(inp1)
+            inp1=str(round(inp1,2))+' '+'บาท'
         elif(int(inp1)>5000000):
             inp1=7500+20000+37500+50000+250000+900000+(int(inp1)-5000000)*0.30
-            inp1=str(inp1)
+            inp1=str(round(inp1,2))+' '+'บาท'
 
         
 
