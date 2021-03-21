@@ -5,7 +5,7 @@ Jinja2==2.7.3
 MarkupSafe==0.23
 Werkzeug==0.10.4
 flask_jsonpify==1.5.0
-flask_restful==0.3.8
+flask_restful
 json
 time
 requests==2.24.0
