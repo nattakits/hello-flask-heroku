@@ -18,17 +18,22 @@ class get_mathcal(Resource):
     def get(self):
         parser=reqparse.RequestParser()
         parser.add_argument('input1',type=str)
-        #parser.add_argument('input2',type=str)
+        parser.add_argument('input2',type=str)
+        parser.add_argument('input3',type=str)
         #parser.add_argument('operation',type=str)
         dictp=parser.parse_args()
-        inp1=dictp['input1']
-        #inp2=dictp['input2']
+        inp_1=dictp['input1']
+        inp_2=dictp['input2']
+        inp_3=dictp['input3']
         #oper=dictp['operation']
         #if(oper=='plus'):
             #oper='+'
         #else:
             #oper='-'
-
+        inp_1=int(inp_1)
+        inp_2=int(inp_2)
+        inp_3=int(inp_3)
+        inp1=inp_1*12+inp_2+inp_3-60000-100000
         print(inp1)
         if(int(inp1)<=150000):  #<150000
             inp1='0'+' '+'บาท'
