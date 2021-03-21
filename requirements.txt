@@ -7,4 +7,3 @@ Werkzeug==0.10.4
 flask_restful
 flask_jsonpify
 python-dotenv
-gunicorn
