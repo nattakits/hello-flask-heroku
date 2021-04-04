@@ -1,0 +1,14 @@
+{% extends "bootstrap/base.html" %}
+
+{% block content %}
+<center><h1>Toptrend Thailand</h1></center>
+<div class="alert alert-success" role="alert">
+  <a href={{Url[0]}} class="alert-link"><center>{{Order[0]}})&emsp;&emsp;{{Hastag[0]}}&emsp;&emsp;{{Volumns[0]}}</center></a>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+{% endblock %}
