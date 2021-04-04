@@ -8,4 +8,4 @@ flask_jsonpify==1.5.0
 Flask-RESTful==0.3.5
 requests==2.24.0
 tweepy
-flask_bootstrap
+Flask-Bootstrap
